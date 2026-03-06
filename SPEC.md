@@ -8,7 +8,8 @@
 - Next.js 15 (App Router)
 - TypeScript
 - Tailwind CSS v4
-- Framer Motion (애니메이션)
+- Framer Motion (스크롤 기반 애니메이션, useScroll, useTransform)
+- GSAP + ScrollTrigger (줌인/줌아웃 스크롤 효과)
 - Vercel 배포
 
 ## 디자인 방향
@@ -63,12 +64,16 @@
 - 모든 경력/프로젝트 데이터를 `src/data/` 폴더에 TypeScript 객체로 관리
 - 나중에 CMS 연동 가능하도록 구조화
 
-## 인터랙티브 요소
-- 스크롤 애니메이션 (Framer Motion)
-- 경력 타임라인 호버/클릭 인터랙션
-- 경력기술서 프로젝트 카드 아코디언
-- 스킬 태그 애니메이션
+## 디자인 & 인터랙티브 요소 ⭐ 중요
+- **센세이셔널한 스크롤 기반 애니메이션** — Apple 제품 페이지처럼 스크롤하면 줌인/줌아웃, 요소가 등장/사라지는 느낌
+- GSAP ScrollTrigger 또는 Framer Motion useScroll/useTransform 활용
+- 히어로 섹션: 스크롤 시 텍스트 zoom-in → fade out, 배경 parallax
+- 경력 타임라인: 스크롤하면 각 경력이 줌인되며 나타나고, 지나가면 줌아웃
+- 프로젝트 카드: 스크롤 시 카드가 perspective transform으로 등장
+- 스킬 섹션: 태그가 스크롤에 따라 하나씩 pop-in
+- 숫자 카운트업 애니메이션 (경력 연수, 프로젝트 수 등)
 - 부드러운 페이지 전환
+- **절제된 화려함** — 과하지 않되 "와" 소리 나오는 수준
 
 ## 연락처 정보
 - 📧 iamyoonjae@gmail.com
