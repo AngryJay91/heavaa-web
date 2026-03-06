@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -37,14 +38,21 @@ export default function HeroSection() {
         className="text-center px-4 max-w-4xl mx-auto"
         style={{ opacity, scale }}
       >
-        {/* 프로필 아바타 */}
+        {/* 프로필 사진 */}
         <motion.div
-          className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-3xl md:text-4xl font-bold shadow-xl"
+          className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-8 rounded-full overflow-hidden shadow-xl ring-4 ring-white/20"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          송
+          <Image
+            src="/images/profile.jpg"
+            alt="송윤재 프로필"
+            width={144}
+            height={144}
+            className="w-full h-full object-cover object-top"
+            priority
+          />
         </motion.div>
 
         {/* 이름 */}
