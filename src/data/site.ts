@@ -31,6 +31,7 @@ export const siteConfig: SiteConfig = {
     { label: '홈', href: '/' },
     { label: '이력서', href: '/resume' },
     { label: '경력기술서', href: '/career' },
+    { label: '자기소개서', href: '/cover-letter' },
     { label: '연락처', href: '/contact' },
   ],
 };
