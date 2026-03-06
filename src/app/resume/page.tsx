@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Timeline from '@/components/resume/Timeline';
 import SkillCloud from '@/components/resume/SkillCloud';
 import Education from '@/components/resume/Education';
@@ -22,6 +23,21 @@ export default function ResumePage() {
           <p className="text-[var(--muted)] text-lg max-w-xl mx-auto">
             9년간의 서비스 기획 & Product Owner 경력
           </p>
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <Link
+              href="/career"
+              className="text-sm text-[var(--accent)] hover:underline font-medium"
+            >
+              경력기술서 보기 →
+            </Link>
+            <span className="text-[var(--border)]">|</span>
+            <Link
+              href="/cover-letter"
+              className="text-sm text-[var(--accent)] hover:underline font-medium"
+            >
+              자기소개서 보기 →
+            </Link>
+          </div>
         </div>
 
         {/* 타임라인 */}

@@ -97,7 +97,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
 export default function ProjectCards() {
   return (
-    <section className="py-20">
+    <section id="projects" className="py-20 scroll-mt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

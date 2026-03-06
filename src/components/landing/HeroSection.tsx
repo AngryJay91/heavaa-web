@@ -82,12 +82,12 @@ export default function HeroSection() {
           >
             이력서 보기
           </Link>
-          <Link
-            href="/career"
+          <a
+            href="#projects"
             className="px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--card)] transition-colors"
           >
-            경력기술서
-          </Link>
+            프로덕트 보기 ↓
+          </a>
           <Link
             href="/contact"
             className="px-6 py-3 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
