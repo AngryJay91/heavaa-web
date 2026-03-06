@@ -72,8 +72,23 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-1 text-xs text-accent hover:underline"
           >
-            사이트 방문 →
+            {project.url.includes('github.com') ? 'GitHub →' : '사이트 방문 →'}
           </a>
+        )}
+        {project.urls && (
+          <div className="mt-4 flex flex-wrap gap-3">
+            {project.urls.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs text-accent hover:underline"
+              >
+                {link.label} →
+              </a>
+            ))}
+          </div>
         )}
       </div>
     </motion.div>
