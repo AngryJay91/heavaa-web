@@ -82,7 +82,7 @@ export default function ContactPage() {
               <div className="flex-1">
                 <p className="text-xs font-bold uppercase tracking-widest text-[var(--muted)] mb-1">GitHub</p>
                 <p className="font-semibold group-hover:text-[var(--accent)] transition-colors">
-                  github.com/iamyoonjae
+                  github.com/AngryJay91
                 </p>
               </div>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[var(--muted)] group-hover:text-[var(--accent)] transition-colors">

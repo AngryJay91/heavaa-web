@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
   contact: {
     email: 'iamyoonjae@gmail.com',
     phone: '010-3141-9940',
-    github: 'https://github.com/iamyoonjae',
+    github: 'https://github.com/AngryJay91',
   },
   nav: [
     { label: '홈', href: '/' },
