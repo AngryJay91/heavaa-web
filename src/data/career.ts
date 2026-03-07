@@ -169,20 +169,23 @@ export const careerDetails: CareerDetail[] = [
         details: [
           'LLM 기반 성경 구절 큐레이션 — 매일 말씀 선별 및 해설 자동 생성',
           'TTS(Text-to-Speech) 변환 파이프라인 구축 — 자연스러운 오디오 콘텐츠 생성',
-          '팟캐스트 플랫폼 자동 배포 파이프라인 설계',
+          '콘텐츠 자동 배포 파이프라인 설계',
         ],
       },
       {
-        title: '앱 개발 및 배포',
+        title: '앱 풀스택 개발 및 배포',
         details: [
-          'iOS / Android 앱 개발 및 스토어 배포',
-          'App Store, Google Play 양 플랫폼 동시 출시',
+          'React Native 0.78 기반 iOS/Android 크로스플랫폼 앱 개발',
+          'FastAPI 백엔드 — 유저, 성경, 플레이리스트, 묵상, 트랙, 북마크, 재생기록, 검색 등 11개 API 모듈',
+          'Supabase 연동 (인증, DB), 카카오/Apple 소셜 로그인',
+          'App Store + Google Play 양 플랫폼 동시 출시',
         ],
       },
     ],
     results: [
       'App Store + Google Play 양 플랫폼 출시 완료',
       'AI 큐레이션 → TTS 변환 → 배포까지 전 과정 자동화 파이프라인 구축',
+      'FastAPI 백엔드 11개 API 모듈 + React Native 앱 풀스택 1인 개발',
       '사용자 개입 최소화(Zero-touch) 콘텐츠 생산 구조 실현',
     ],
     insights: [
