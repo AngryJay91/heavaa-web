@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { siteConfig } from '@/data/site';
+import RecipientLink from '@/components/ui/RecipientLink';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -12,13 +12,13 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-6">
           {siteConfig.nav.slice(1).map((item) => (
-            <Link
+            <RecipientLink
               key={item.href}
               href={item.href}
               className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
             >
               {item.label}
-            </Link>
+            </RecipientLink>
           ))}
         </div>
         <p className="text-sm text-[var(--muted)]">

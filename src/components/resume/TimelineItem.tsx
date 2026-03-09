@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import Link from 'next/link';
+import RecipientLink from '@/components/ui/RecipientLink';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { type Career } from '@/data/resume';
 
@@ -59,12 +59,12 @@ export default function TimelineItem({ career, index }: TimelineItemProps) {
                 <li key={project.id} className="flex items-start gap-2">
                   <span className="text-[var(--accent)] mt-1 flex-shrink-0">▸</span>
                   <div>
-                    <Link
+                    <RecipientLink
                       href={`/career#${project.id}`}
                       className="font-medium hover:text-[var(--accent)] transition-colors"
                     >
                       {project.name}
-                    </Link>
+                    </RecipientLink>
                     <p className="text-sm text-[var(--muted)]">{project.summary}</p>
                   </div>
                 </li>

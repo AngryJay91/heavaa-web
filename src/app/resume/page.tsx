@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import RecipientLink from '@/components/ui/RecipientLink';
 import Timeline from '@/components/resume/Timeline';
 import SkillCloud from '@/components/resume/SkillCloud';
 import Education from '@/components/resume/Education';
@@ -32,19 +32,19 @@ export default async function ResumePage({ searchParams }: ResumePageProps) {
             9년간의 서비스 기획 & Product Owner 경력
           </p>
           <div className="mt-6 flex items-center justify-center gap-4">
-            <Link
+            <RecipientLink
               href="/career"
               className="text-sm text-[var(--accent)] hover:underline font-medium"
             >
               경력기술서 보기 →
-            </Link>
+            </RecipientLink>
             <span className="text-[var(--border)]">|</span>
-            <Link
+            <RecipientLink
               href="/cover-letter"
               className="text-sm text-[var(--accent)] hover:underline font-medium"
             >
               자기소개서 보기 →
-            </Link>
+            </RecipientLink>
           </div>
         </div>
 
