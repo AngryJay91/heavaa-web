@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import RecipientLink from '@/components/ui/RecipientLink';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface HeroSectionProps {
@@ -98,24 +98,24 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link
+          <RecipientLink
             href="/resume"
             className="px-6 py-3 bg-[var(--accent)] text-white rounded-xl font-semibold hover:bg-[var(--accent-light)] transition-colors shadow-lg shadow-indigo-500/25"
           >
             이력서 보기
-          </Link>
+          </RecipientLink>
           <a
             href="#projects"
             className="px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--card)] transition-colors"
           >
             프로덕트 보기 ↓
           </a>
-          <Link
+          <RecipientLink
             href="/contact"
             className="px-6 py-3 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
           >
             연락하기 →
-          </Link>
+          </RecipientLink>
         </motion.div>
       </motion.div>
 
