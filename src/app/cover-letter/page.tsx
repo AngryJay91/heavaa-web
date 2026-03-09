@@ -1,13 +1,23 @@
 import type { Metadata } from 'next';
 import CoverSection from '@/components/cover-letter/CoverSection';
-import { coverSections } from '@/data/coverLetter';
+import { coverSections as defaultCoverSections } from '@/data/coverLetter';
+import { getRecipientData } from '@/lib/recipient';
 
 export const metadata: Metadata = {
   title: '자기소개서',
   description: '송윤재의 자기소개서',
 };
 
-export default function CoverLetterPage() {
+interface CoverLetterPageProps {
+  searchParams: Promise<{ recipient?: string }>;
+}
+
+export default async function CoverLetterPage({ searchParams }: CoverLetterPageProps) {
+  const { recipient } = await searchParams;
+  const recipientData = getRecipientData(recipient);
+
+  const coverSections = recipientData?.coverSections ?? defaultCoverSections;
+
   return (
     <div className="pt-24 pb-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">

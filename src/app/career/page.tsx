@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { careerDetails } from '@/data/career';
 import CompanySection from '@/components/career/CompanySection';
+import { getRecipientData } from '@/lib/recipient';
 
 export const metadata: Metadata = {
   title: '경력기술서',
@@ -10,7 +11,14 @@ export const metadata: Metadata = {
 // 회사별로 그룹핑
 const companyOrder = ['moongklab', 'heavaa', 'blq', 'cube', 'delivery-rush'];
 
-export default function CareerPage() {
+interface CareerPageProps {
+  searchParams: Promise<{ recipient?: string }>;
+}
+
+export default async function CareerPage({ searchParams }: CareerPageProps) {
+  const { recipient } = await searchParams;
+  const recipientData = getRecipientData(recipient);
+
   return (
     <div className="pt-24 pb-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -38,6 +46,7 @@ export default function CareerPage() {
               key={companyId}
               companyId={companyId}
               details={details}
+              highlights={recipientData?.careerHighlights}
             />
           );
         })}

@@ -5,7 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  tagline?: string;
+  subtitle?: string;
+}
+
+export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -72,9 +77,18 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          문제를 구조화하고,{' '}
-          <span className="text-[var(--accent)] font-semibold">검증가능한 제품을 만드는</span>{' '}
-          Product Builder
+          {tagline && subtitle ? (
+            <>
+              {subtitle}{' '}
+              <span className="text-[var(--accent)] font-semibold">{tagline}</span>
+            </>
+          ) : (
+            <>
+              문제를 구조화하고,{' '}
+              <span className="text-[var(--accent)] font-semibold">검증가능한 제품을 만드는</span>{' '}
+              Product Builder
+            </>
+          )}
         </motion.p>
 
         {/* CTA 버튼 */}

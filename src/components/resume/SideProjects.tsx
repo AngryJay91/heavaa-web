@@ -5,7 +5,15 @@ import { sideProjects } from '@/data/resume';
 import Tag from '@/components/ui/Tag';
 import { staggerContainer, fadeUp } from '@/lib/utils/animations';
 
-export default function SideProjects() {
+interface SideProjectsProps {
+  filter?: string[];
+}
+
+export default function SideProjects({ filter }: SideProjectsProps = {}) {
+  const visibleProjects = filter
+    ? sideProjects.filter((p) => filter.includes(p.id))
+    : sideProjects;
+
   return (
     <motion.div
       variants={staggerContainer}
@@ -14,7 +22,7 @@ export default function SideProjects() {
       viewport={{ once: true, margin: '-50px' }}
       className="grid gap-4 sm:grid-cols-2"
     >
-      {sideProjects.map((project) => (
+      {visibleProjects.map((project) => (
         <motion.a
           key={project.id}
           href={`/career#${project.id}`}

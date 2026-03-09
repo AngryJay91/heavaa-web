@@ -7,9 +7,10 @@ import InsightBlock from './InsightBlock';
 
 interface ProjectCardProps {
   detail: CareerDetail;
+  isHighlighted?: boolean;
 }
 
-export default function ProjectCard({ detail }: ProjectCardProps) {
+export default function ProjectCard({ detail, isHighlighted }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -35,7 +36,14 @@ export default function ProjectCard({ detail }: ProjectCardProps) {
         aria-label={`${detail.projectName} 상세 내용 ${isOpen ? '접기' : '펼치기'}`}
       >
         <div className="flex-1">
-          <h3 className="text-lg font-bold mb-1">{detail.projectName}</h3>
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="text-lg font-bold">{detail.projectName}</h3>
+            {isHighlighted && (
+              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30 flex-shrink-0">
+                핵심 프로젝트
+              </span>
+            )}
+          </div>
           <p className="text-sm text-[var(--muted)]">{detail.summary}</p>
         </div>
         <motion.span

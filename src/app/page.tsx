@@ -2,11 +2,22 @@ import HeroSection from '@/components/landing/HeroSection';
 import StatsCounter from '@/components/landing/StatsCounter';
 import ProjectCards from '@/components/landing/ProjectCards';
 import Section from '@/components/ui/Section';
+import { getRecipientData } from '@/lib/recipient';
 
-export default function HomePage() {
+interface HomePageProps {
+  searchParams: Promise<{ recipient?: string }>;
+}
+
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const { recipient } = await searchParams;
+  const recipientData = getRecipientData(recipient);
+
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        tagline={recipientData?.heroOverride?.tagline}
+        subtitle={recipientData?.heroOverride?.subtitle}
+      />
 
       {/* 스탯 섹션 */}
       <Section className="bg-[var(--card)] border-y border-[var(--border)]">

@@ -4,13 +4,21 @@ import Timeline from '@/components/resume/Timeline';
 import SkillCloud from '@/components/resume/SkillCloud';
 import Education from '@/components/resume/Education';
 import SideProjects from '@/components/resume/SideProjects';
+import { getRecipientData } from '@/lib/recipient';
 
 export const metadata: Metadata = {
   title: '이력서',
   description: '송윤재의 경력 타임라인, 스킬, 학력 정보',
 };
 
-export default function ResumePage() {
+interface ResumePageProps {
+  searchParams: Promise<{ recipient?: string }>;
+}
+
+export default async function ResumePage({ searchParams }: ResumePageProps) {
+  const { recipient } = await searchParams;
+  const recipientData = getRecipientData(recipient);
+
   return (
     <div className="pt-24 pb-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -49,7 +57,7 @@ export default function ResumePage() {
         {/* 사이드 프로젝트 */}
         <section className="mb-24">
           <h2 className="text-2xl font-bold mb-8">사이드 프로젝트</h2>
-          <SideProjects />
+          <SideProjects filter={recipientData?.sideProjectFilter} />
         </section>
 
         {/* 스킬 */}
