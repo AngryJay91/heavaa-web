@@ -20,8 +20,16 @@ function RecipientLinkInner({ href, ...props }: LinkProps) {
 
   let finalHref: LinkProps['href'] = href;
   if (recipient && !isExternal && !isAnchorOnly) {
-    const separator = hrefStr.includes('?') ? '&' : '?';
-    finalHref = `${hrefStr}${separator}recipient=${encodeURIComponent(recipient)}`;
+    const hashIdx = hrefStr.indexOf('#');
+    if (hashIdx >= 0) {
+      const path = hrefStr.slice(0, hashIdx);
+      const fragment = hrefStr.slice(hashIdx);
+      const sep = path.includes('?') ? '&' : '?';
+      finalHref = `${path}${sep}recipient=${encodeURIComponent(recipient)}${fragment}`;
+    } else {
+      const separator = hrefStr.includes('?') ? '&' : '?';
+      finalHref = `${hrefStr}${separator}recipient=${encodeURIComponent(recipient)}`;
+    }
   }
 
   return <Link href={finalHref} {...props} />;

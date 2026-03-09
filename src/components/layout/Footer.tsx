@@ -1,5 +1,3 @@
-'use client';
-
 import { siteConfig } from '@/data/site';
 import RecipientLink from '@/components/ui/RecipientLink';
 
