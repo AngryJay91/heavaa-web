@@ -50,10 +50,10 @@ export const careerDetails: CareerDetail[] = [
         ],
       },
       {
-        title: 'AI 진단 PoC: 룰베이스 vs AI Agent 비교 실험',
+        title: 'AI 기반 셀러 진단 서비스 기획',
         details: [
-          '실제 셀러 캠페인 데이터로 DB 룰베이스(18규칙) vs AI Agent(유튜버 페르소나 기반) 진단 비교',
-          '실험 결과를 바탕으로 47개 규칙 Decision Tree + MarginRoom 설정이 포함된 AI 진단 V2 스펙 도출 및 프로덕션 배포',
+          '기존 룰베이스 진단과 LLM 기반 진단의 비교 실험을 설계·실행하여 최적 접근법 도출',
+          '실험 결과를 바탕으로 서비스 스펙 수립 및 프로덕션 적용',
         ],
       },
       {
