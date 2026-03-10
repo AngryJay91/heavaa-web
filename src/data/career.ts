@@ -53,8 +53,7 @@ export const careerDetails: CareerDetail[] = [
         title: 'AI 진단 PoC: 룰베이스 vs AI Agent 비교 실험',
         details: [
           '실제 셀러 캠페인 데이터로 DB 룰베이스(18규칙) vs AI Agent(유튜버 페르소나 기반) 진단 비교',
-          '실험 결과를 바탕으로 47개 규칙 Decision Tree + MarginRoom 설정이 포함된 AI 진단 V2 스펙 도출',
-          'S54에서 프로덕션 배포까지 연결',
+          '실험 결과를 바탕으로 47개 규칙 Decision Tree + MarginRoom 설정이 포함된 AI 진단 V2 스펙 도출 및 프로덕션 배포',
         ],
       },
       {
@@ -69,7 +68,7 @@ export const careerDetails: CareerDetail[] = [
     results: [
       '멀티에이전트 시스템 실전 운영 — AI 협업으로 에픽 스펙, 스토리 문서, 스크린 스펙 등 대량 산출물 생산',
       'spec-site 구축 및 배포 — PO가 직접 인터랙티브 목업을 만들어 개발 핸드오프하는 새로운 워크플로우 확립',
-      'AI 진단 V2 스펙 도출 및 프로덕션 배포 — 47개 진단 규칙 + MarginRoom 설정',
+      'AI 진단 V2 스펙 도출 — 47개 진단 규칙 + MarginRoom 설정 기반 프로덕션 배포',
       '의도적 오버스펙 실험의 실패에서 "AI가 빠르게 만드는 건 문서이지 의사결정이 아니다"라는 핵심 교훈 도출 → Corti 탄생의 계기',
       '실전 경험 전체를 개인 오픈소스 프로젝트 Popilot으로 추출 — AI-augmented PO 프레임워크화',
     ],
