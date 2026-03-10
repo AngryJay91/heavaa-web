@@ -68,7 +68,7 @@ export const careerDetails: CareerDetail[] = [
     results: [
       '멀티에이전트 PO 시스템 실전 운영 — 에픽 스펙, 스토리, 스크린 스펙 등 기획 산출물 생산 효율화',
       '인터랙티브 스펙 도구 직접 구축·배포하여 개발 핸드오프 워크플로우 개선',
-      'AI 진단 PoC 실험 → V2 스펙 도출 및 프로덕션 배포',
+      '셀러 대상 AI 기반 진단 서비스 기획 및 프로덕션 적용',
       '실전 경험을 개인 오픈소스 프로젝트 Popilot으로 추출 — AI-augmented PO 프레임워크화',
     ],
     insights: [
