@@ -22,12 +22,24 @@ export interface RecipientData {
 }
 
 // ── 정적 매핑 (새 recipient 추가 시 여기에만 추가) ──────────────────
-type RecipientKey = 'paytalab';
+type RecipientKey = 'paytalab' | 'standbylab';
 
 const recipientMap: Record<RecipientKey, () => RecipientData> = {
   paytalab: () => {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const m = require('@/data/recipients/paytalab');
+    return {
+      heroOverride: m.heroOverride,
+      sideProjectFilter: m.sideProjectFilter,
+      careerHighlights: m.careerHighlights,
+      coverSections: m.coverSections,
+      motivationText: m.motivationText,
+      workStyleText: m.workStyleText,
+    };
+  },
+  standbylab: () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const m = require('@/data/recipients/standbylab');
     return {
       heroOverride: m.heroOverride,
       sideProjectFilter: m.sideProjectFilter,
