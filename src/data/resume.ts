@@ -44,7 +44,7 @@ export const careers: Career[] = [
         id: 'jangsawang',
         name: '장사왕',
         summary:
-          '셀러 분석 SaaS에 15명 AI 멀티에이전트 PO 시스템 실전 적용 — spec-site 구축, AI 진단 PoC, 3스프린트 운영',
+          '쿠팡 광고 분석 대시보드를 룰베이스 → AI 에이전트 기반 진단 서비스로 단계적 고도화, 셀러 대상 AI 광고 진단 서비스 출시',
       },
     ],
   },
