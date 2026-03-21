@@ -84,9 +84,9 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
             </>
           ) : (
             <>
-              문제를 구조화하고,{' '}
-              <span className="text-[var(--accent)] font-semibold">검증가능한 제품을 만드는</span>{' '}
-              Product Builder
+              데이터로 문제를 정의하고,{' '}
+              <span className="text-[var(--accent)] font-semibold">팀과 함께 해결하는</span>{' '}
+              Product Owner
             </>
           )}
         </motion.p>
