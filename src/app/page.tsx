@@ -47,7 +47,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             함께 일하고 싶으신가요?
           </h2>
           <p className="text-[var(--muted)] text-lg mb-8">
-            경력 9년+의 Product Builder와 새로운 문제를 함께 풀어보세요.
+            경력 9년+의 Product Owner와 새로운 문제를 함께 풀어보세요.
           </p>
           <a
             href="mailto:iamyoonjae@gmail.com"
