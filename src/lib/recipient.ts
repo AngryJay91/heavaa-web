@@ -22,7 +22,7 @@ export interface RecipientData {
 }
 
 // ── 정적 매핑 (새 recipient 추가 시 여기에만 추가) ──────────────────
-type RecipientKey = 'paytalab' | 'standbylab' | 'product-builder';
+type RecipientKey = 'paytalab' | 'standbylab' | 'product-builder' | 'miridih';
 
 const recipientMap: Record<RecipientKey, () => RecipientData> = {
   paytalab: () => {
@@ -52,6 +52,18 @@ const recipientMap: Record<RecipientKey, () => RecipientData> = {
   'product-builder': () => {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const m = require('@/data/recipients/product-builder');
+    return {
+      heroOverride: m.heroOverride,
+      sideProjectFilter: m.sideProjectFilter,
+      careerHighlights: m.careerHighlights,
+      coverSections: m.coverSections,
+      motivationText: m.motivationText,
+      workStyleText: m.workStyleText,
+    };
+  },
+  miridih: () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const m = require('@/data/recipients/miridih');
     return {
       heroOverride: m.heroOverride,
       sideProjectFilter: m.sideProjectFilter,
