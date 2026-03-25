@@ -27,7 +27,7 @@ export default async function ResumePage({ searchParams }: ResumePageProps) {
           <p className="text-sm font-bold uppercase tracking-widest text-[var(--accent)] mb-3">
             Resume
           </p>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">경력 이력서</h1>
+          <h1 className="text-4xl md:text-5xl font-black mb-4">이력서</h1>
           <p className="text-[var(--muted)] text-lg max-w-xl mx-auto">
             9년간의 서비스 기획 & Product Owner 경력
           </p>
