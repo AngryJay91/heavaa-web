@@ -51,24 +51,26 @@ export const careers: Career[] = [
   {
     id: 'heavaa',
     company: '헤바 (Heavaa)',
-    role: 'CEO / Product Builder',
+    role: 'Founder / Product Manager',
     period: { start: '2025.03', end: '현재' },
-    description: '직접 창업한 1인 프로덕트 빌더 스튜디오',
+    description: 'AI Native 제품을 직접 기획·설계·개발하는 1인 프로덕트 스튜디오',
     projects: [
       {
         id: 'corti',
         name: 'Corti',
-        summary: '팀 의사결정 자동 추출·검색 AI 플랫폼',
+        summary:
+          'Slack·GitHub·Notion 등에 흩어진 팀 의사결정을 검색 가능한 자산으로 전환하는 AI decision memory product',
       },
       {
-        id: 'maldives-match',
-        name: '몰디브매치',
-        summary: '몰디브 리조트 추천 서비스',
+        id: 'sprintable',
+        name: 'Sprintable',
+        summary:
+          'AI 에이전트와 사람이 함께 일하는 스프린트 운영체계를 제품화한 AI Native workflow tool',
       },
       {
         id: 'inner-seed',
         name: '내마음속씨앗',
-        summary: 'AI 성경 팟캐스트',
+        summary: '성경 이해의 진입장벽을 AI 오디오 콘텐츠로 낮춘 서비스',
       },
     ],
   },
@@ -138,11 +140,11 @@ export const careers: Career[] = [
 
 export const sideProjects: SideProject[] = [
   {
-    id: 'popilot',
-    name: 'Popilot',
+    id: 'maldives-match',
+    name: '몰디브매치',
     summary:
-      '뭉클랩 실전 dogfooding → 오픈소스 추출한 AI-augmented PO 프레임워크',
-    tags: ['Multi-Agent', 'LLM', 'Product Management', 'Open Source'],
+      '230개 리조트 데이터와 6요인 매칭 알고리즘으로 의사결정을 돕는 리조트 추천 서비스',
+    tags: ['Decision Support', 'Travel', 'Data Modeling', 'Next.js'],
   },
   {
     id: 'agent-earth',

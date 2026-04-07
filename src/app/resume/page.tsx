@@ -29,7 +29,7 @@ export default async function ResumePage({ searchParams }: ResumePageProps) {
           </p>
           <h1 className="text-4xl md:text-5xl font-black mb-4">이력서</h1>
           <p className="text-[var(--muted)] text-lg max-w-xl mx-auto">
-            9년간의 서비스 기획 & Product Owner 경력
+            9년간 문제를 구조화하고 검증 가능한 제품으로 연결해온 Product Manager
           </p>
           <div className="mt-6 flex items-center justify-center gap-4">
             <RecipientLink
