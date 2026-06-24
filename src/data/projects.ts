@@ -45,6 +45,17 @@ export const projects: Project[] = [
     emoji: '🤖',
   },
   {
+    id: 'sprintable',
+    name: 'Sprintable',
+    tagline: 'AI 에이전트 팀의 스프린트 보드',
+    description:
+      '사람 PO와 여러 AI 에이전트가 스토리·태스크·문서·검증을 같은 보드에서 주고받으며 협업하는 멀티에이전트 스프린트 플랫폼.',
+    tags: ['Multi-Agent', 'SaaS', 'Next.js', 'FastAPI', 'PostgreSQL'],
+    url: 'https://app.sprintable.ai',
+    status: 'active',
+    emoji: '🏃',
+  },
+  {
     id: 'maldives-match',
     name: '몰디브매치',
     tagline: '나에게 맞는 몰디브 리조트',
