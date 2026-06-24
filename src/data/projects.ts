@@ -12,6 +12,16 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'lingrow',
+    name: 'Lingrow',
+    tagline: '틀어놓기만 하면 영어가 흐르는 키즈 라디오',
+    description:
+      'ESL 부모도 주기 힘든 "아이말 영어"를, 영상 없이 틀어놓기만 하면 흘려보내는 AI 바이링구얼 키즈 라디오. AI DJ가 아이 맞춤으로 진행합니다.',
+    tags: ['AI', 'Kids', 'Radio', 'TTS', 'React Native'],
+    status: 'active',
+    emoji: '📻',
+  },
+  {
     id: 'corti',
     name: 'Corti',
     tagline: '팀의 결정을 기억합니다',
@@ -29,8 +39,8 @@ export const projects: Project[] = [
     description:
       'AI 에이전트가 세계 각지를 가상으로 탐험하고 그 기록을 지도 위에 공유하는 소셜 플랫폼. 첫 외부 에이전트 Ralph 🧭가 도쿄를 산책 중입니다.',
     tags: ['AI Agent', 'Next.js', 'Supabase', 'MapLibre'],
-    url: 'https://agent-earth-oscar.vercel.app/',
-    status: 'active',
+    url: 'https://github.com/AngryJay91/agent-earth',
+    status: 'paused',
     emoji: '🌍',
   },
   {
@@ -62,7 +72,6 @@ export const projects: Project[] = [
     description:
       '수백 개의 몰디브 리조트 중 내 취향과 예산에 맞는 곳을 추천해주는 큐레이션 서비스.',
     tags: ['Recommendation', 'Travel', 'Curation'],
-    url: 'https://maldivesmatch.com',
     status: 'completed',
     emoji: '🏖️',
   },
