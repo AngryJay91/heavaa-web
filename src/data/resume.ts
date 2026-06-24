@@ -65,7 +65,7 @@ export const careers: Career[] = [
         id: 'sprintable',
         name: 'Sprintable',
         summary:
-          'AI 에이전트와 사람이 함께 일하는 스프린트 운영체계를 제품화한 AI Native workflow tool',
+          '사람 PO와 여러 AI 에이전트가 한 보드에서 협업하는 멀티에이전트 스프린트 플랫폼. app.sprintable.ai 배포 · AGPL-3.0 오픈소스 · 독립 에이전트 팀이 dogfooding으로 직접 개발',
       },
       {
         id: 'inner-seed',

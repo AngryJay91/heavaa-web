@@ -18,9 +18,10 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: '송윤재',
-  title: '송윤재 — Product Builder',
-  description: '문제를 구조화하고, 검증가능한 제품을 만드는 Product Builder. Heavaa CEO.',
+  name: 'Heavaa',
+  title: 'Heavaa — AI Native 프로덕트 스튜디오',
+  description:
+    '문제를 발견하고, 가설을 세우고, 제품으로 검증합니다. Lingrow·Corti·Sprintable·내마음속씨앗을 만드는 1인 AI Native 프로덕트 스튜디오.',
   url: 'https://www.heavaa.com',
   contact: {
     email: 'iamyoonjae@gmail.com',
@@ -29,9 +30,7 @@ export const siteConfig: SiteConfig = {
   },
   nav: [
     { label: '홈', href: '/' },
-    { label: '이력서', href: '/resume' },
-    { label: '경력기술서', href: '/career' },
-    { label: '자기소개서', href: '/cover-letter' },
+    { label: 'About', href: '/about' },
     { label: '연락처', href: '/contact' },
   ],
 };

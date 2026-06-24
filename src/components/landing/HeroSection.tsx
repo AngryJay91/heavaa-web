@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import RecipientLink from '@/components/ui/RecipientLink';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -28,12 +27,8 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* 배경 그라디언트 (parallax) */}
-      <motion.div
-        className="absolute inset-0 -z-10"
-        style={{ y }}
-      >
+      <motion.div className="absolute inset-0 -z-10" style={{ y }}>
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 dark:from-indigo-900/20 dark:to-purple-900/20" />
-        {/* 배경 블러 원 */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-indigo-400/20 rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-purple-400/20 rounded-full blur-3xl" />
       </motion.div>
@@ -43,31 +38,24 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
         className="text-center px-4 max-w-4xl mx-auto"
         style={{ opacity, scale }}
       >
-        {/* 프로필 사진 */}
-        <motion.div
-          className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-8 rounded-full overflow-hidden shadow-xl ring-4 ring-white/20"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+        {/* 스튜디오 라벨 */}
+        <motion.p
+          className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-[var(--accent)] mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src="/images/profile.jpg"
-            alt="송윤재 프로필"
-            width={144}
-            height={144}
-            className="w-full h-full object-cover object-top"
-            priority
-          />
-        </motion.div>
+          AI Native Product Studio
+        </motion.p>
 
-        {/* 이름 */}
+        {/* 헤바 */}
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-4"
+          className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          송윤재
+          Heavaa
         </motion.h1>
 
         {/* 부제 */}
@@ -84,9 +72,8 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
             </>
           ) : (
             <>
-              데이터로 문제를 정의하고,{' '}
-              <span className="text-[var(--accent)] font-semibold">팀과 함께 해결하는</span>{' '}
-              Product Owner
+              문제를 발견하고, 가설을 세우고,{' '}
+              <span className="text-[var(--accent)] font-semibold">제품으로 검증합니다.</span>
             </>
           )}
         </motion.p>
@@ -98,18 +85,18 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <RecipientLink
-            href="/resume"
-            className="px-6 py-3 bg-[var(--accent)] text-white rounded-xl font-semibold hover:bg-[var(--accent-light)] transition-colors shadow-lg shadow-indigo-500/25"
-          >
-            이력서 보기
-          </RecipientLink>
           <a
-            href="#projects"
-            className="px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--card)] transition-colors"
+            href="#products"
+            className="px-6 py-3 bg-[var(--accent)] text-white rounded-xl font-semibold hover:bg-[var(--accent-light)] transition-colors shadow-lg shadow-indigo-500/25"
           >
             프로덕트 보기 ↓
           </a>
+          <RecipientLink
+            href="/about"
+            className="px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--card)] transition-colors"
+          >
+            About →
+          </RecipientLink>
           <RecipientLink
             href="/contact"
             className="px-6 py-3 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
