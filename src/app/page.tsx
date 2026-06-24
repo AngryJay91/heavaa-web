@@ -2,6 +2,7 @@ import HeroSection from '@/components/landing/HeroSection';
 import StatsCounter from '@/components/landing/StatsCounter';
 import ProjectCards from '@/components/landing/ProjectCards';
 import Section from '@/components/ui/Section';
+import RecipientLink from '@/components/ui/RecipientLink';
 import { getRecipientData } from '@/lib/recipient';
 
 interface HomePageProps {
@@ -40,14 +41,30 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         <ProjectCards />
       </Section>
 
+      {/* 헤바를 만드는 사람 → About */}
+      <Section className="text-center bg-[var(--card)] border-y border-[var(--border)]">
+        <div className="max-w-2xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-black mb-4">헤바를 만드는 사람</h2>
+          <p className="text-[var(--muted)] text-lg mb-8">
+            9년+ Product Owner 경험으로 AI 에이전트를 팀처럼 운영하며 제품을 만듭니다.
+          </p>
+          <RecipientLink
+            href="/about"
+            className="inline-block px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--background)] transition-colors"
+          >
+            About 보기 →
+          </RecipientLink>
+        </div>
+      </Section>
+
       {/* CTA */}
       <Section className="text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black mb-6">
-            함께 일하고 싶으신가요?
+            함께 만들고 싶은 문제가 있으신가요?
           </h2>
           <p className="text-[var(--muted)] text-lg mb-8">
-            경력 9년+의 Product Owner와 새로운 문제를 함께 풀어보세요.
+            헤바와 새로운 제품을 함께 검증해보세요.
           </p>
           <a
             href="mailto:iamyoonjae@gmail.com"

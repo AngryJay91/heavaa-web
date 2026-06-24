@@ -154,7 +154,10 @@ export const careerDetails: CareerDetail[] = [
       },
     ],
     results: [
-      'PM 워크플로우용 65개 MCP 도구, 21개 API 라우트, 25+ 페이지 규모의 제품 청사진 및 구현 기반 구축',
+      'app.sprintable.ai에 prod 배포 — 사람 PO와 여러 AI 에이전트가 한 보드에서 스토리·태스크·문서·검증을 주고받는 멀티에이전트 스프린트 플랫폼으로 운영',
+      'AGPL-3.0 오픈소스 공개 (github.com/moonklabs/sprintable)',
+      '독립 PO/Dev/QA 에이전트 팀의 dogfooding — 제품 자체를 에이전트들이 개발·검증하는 구조를 실전 운영',
+      'PM 워크플로우용 65개 MCP 도구, 21개 API 라우트, 25+ 페이지 규모의 제품 구현',
       '메모·넛지·문서·스프린트 라이프사이클을 하나의 AI Native 운영 체계로 연결',
       '내부 실험용 프레임워크(Popilot)에서 출발해 공동사업 대상 제품(Sprintable)으로 확장',
     ],
