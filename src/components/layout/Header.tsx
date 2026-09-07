@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import RecipientLink from '@/components/ui/RecipientLink';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils/cn';
@@ -33,17 +33,17 @@ export default function Header() {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* 로고 */}
-        <RecipientLink
+        <Link
           href="/"
           className="font-bold text-lg tracking-tight hover:opacity-70 transition-opacity"
         >
           {siteConfig.name}
-        </RecipientLink>
+        </Link>
 
         {/* 데스크톱 네비게이션 */}
         <nav className="hidden md:flex items-center gap-6">
           {siteConfig.nav.map((item) => (
-            <RecipientLink
+            <Link
               key={item.href}
               href={item.href}
               className={cn(
@@ -54,7 +54,7 @@ export default function Header() {
               )}
             >
               {item.label}
-            </RecipientLink>
+            </Link>
           ))}
         </nav>
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import RecipientLink from '@/components/ui/RecipientLink';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils/cn';
 import { siteConfig } from '@/data/site';
@@ -44,7 +44,7 @@ export default function MobileMenu() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
               >
-                <RecipientLink
+                <Link
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
@@ -53,7 +53,7 @@ export default function MobileMenu() {
                   )}
                 >
                   {item.label}
-                </RecipientLink>
+                </Link>
               </motion.div>
             ))}
           </motion.div>

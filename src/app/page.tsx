@@ -2,23 +2,12 @@ import HeroSection from '@/components/landing/HeroSection';
 import StatsCounter from '@/components/landing/StatsCounter';
 import ProjectCards from '@/components/landing/ProjectCards';
 import Section from '@/components/ui/Section';
-import RecipientLink from '@/components/ui/RecipientLink';
-import { getRecipientData } from '@/lib/recipient';
+import Link from 'next/link';
 
-interface HomePageProps {
-  searchParams: Promise<{ recipient?: string }>;
-}
-
-export default async function HomePage({ searchParams }: HomePageProps) {
-  const { recipient } = await searchParams;
-  const recipientData = getRecipientData(recipient);
-
+export default function HomePage() {
   return (
     <>
-      <HeroSection
-        tagline={recipientData?.heroOverride?.tagline}
-        subtitle={recipientData?.heroOverride?.subtitle}
-      />
+      <HeroSection />
 
       {/* 스탯 섹션 */}
       <Section className="bg-[var(--card)] border-y border-[var(--border)]">
@@ -48,12 +37,12 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           <p className="text-[var(--muted)] text-lg mb-8">
             9년+ Product Owner 경험으로 AI 에이전트를 팀처럼 운영하며 제품을 만듭니다.
           </p>
-          <RecipientLink
+          <Link
             href="/about"
             className="inline-block px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--background)] transition-colors"
           >
             About 보기 →
-          </RecipientLink>
+          </Link>
         </div>
       </Section>
 

@@ -8,10 +8,9 @@ import ProjectCard from './ProjectCard';
 interface CompanySectionProps {
   companyId: string;
   details: CareerDetail[];
-  highlights?: string[];
 }
 
-export default function CompanySection({ companyId, details, highlights }: CompanySectionProps) {
+export default function CompanySection({ companyId, details }: CompanySectionProps) {
   const career = careers.find((c) => c.id === companyId);
   if (!career || details.length === 0) return null;
 
@@ -42,11 +41,7 @@ export default function CompanySection({ companyId, details, highlights }: Compa
       {/* 프로젝트 카드들 */}
       <div className="space-y-4">
         {details.map((detail) => (
-          <ProjectCard
-            key={detail.id}
-            detail={detail}
-            isHighlighted={highlights?.includes(detail.id)}
-          />
+          <ProjectCard key={detail.id} detail={detail} />
         ))}
       </div>
     </motion.div>

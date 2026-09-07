@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { careerDetails } from '@/data/career';
 import CompanySection from '@/components/career/CompanySection';
-import { getRecipientData } from '@/lib/recipient';
 
 export const metadata: Metadata = {
   title: '경력기술서',
@@ -11,14 +10,7 @@ export const metadata: Metadata = {
 // 회사는 최신순 (정본 RESUME_CORE.md 경력기술서와 같은 순서)
 const companyOrder = ['heavaa', 'moongklab', 'blq'];
 
-interface CareerPageProps {
-  searchParams: Promise<{ recipient?: string }>;
-}
-
-export default async function CareerPage({ searchParams }: CareerPageProps) {
-  const { recipient } = await searchParams;
-  const recipientData = getRecipientData(recipient);
-
+export default function CareerPage() {
   return (
     <div className="pt-24 pb-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -43,12 +35,7 @@ export default async function CareerPage({ searchParams }: CareerPageProps) {
         {companyOrder.map((companyId) => {
           const details = careerDetails.filter((d) => d.companyId === companyId);
           return (
-            <CompanySection
-              key={companyId}
-              companyId={companyId}
-              details={details}
-              highlights={recipientData?.careerHighlights}
-            />
+            <CompanySection key={companyId} companyId={companyId} details={details} />
           );
         })}
       </div>

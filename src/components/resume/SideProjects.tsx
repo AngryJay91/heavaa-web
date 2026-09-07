@@ -4,17 +4,9 @@ import { motion } from 'framer-motion';
 import { sideProjects } from '@/data/resume';
 import Tag from '@/components/ui/Tag';
 import { staggerContainer, fadeUp } from '@/lib/utils/animations';
-import RecipientLink from '@/components/ui/RecipientLink';
+import Link from 'next/link';
 
-interface SideProjectsProps {
-  filter?: string[];
-}
-
-export default function SideProjects({ filter }: SideProjectsProps = {}) {
-  const visibleProjects = filter
-    ? sideProjects.filter((p) => filter.includes(p.id))
-    : sideProjects;
-
+export default function SideProjects() {
   return (
     <motion.div
       variants={staggerContainer}
@@ -23,9 +15,9 @@ export default function SideProjects({ filter }: SideProjectsProps = {}) {
       viewport={{ once: true, margin: '-50px' }}
       className="grid gap-4 sm:grid-cols-2"
     >
-      {visibleProjects.map((project) => (
+      {sideProjects.map((project) => (
         <motion.div key={project.id} variants={fadeUp}>
-          <RecipientLink
+          <Link
             href={`/career#${project.id}`}
             className="group block rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 transition-colors hover:border-[var(--accent)]"
           >
@@ -38,7 +30,7 @@ export default function SideProjects({ filter }: SideProjectsProps = {}) {
                 <Tag key={tag}>{tag}</Tag>
               ))}
             </div>
-          </RecipientLink>
+          </Link>
         </motion.div>
       ))}
     </motion.div>
