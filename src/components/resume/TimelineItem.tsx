@@ -41,7 +41,7 @@ export default function TimelineItem({ career, index }: TimelineItemProps) {
         <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-6 hover:border-[var(--accent)] transition-colors duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5">
           {/* 기간 배지 */}
           <span className="inline-block text-xs font-mono text-[var(--muted)] bg-[var(--background)] border border-[var(--border)] px-3 py-1 rounded-full mb-3">
-            {career.period.start} — {career.period.end}
+            {career.period.start} – {career.period.end}
           </span>
 
           {/* 회사명 & 역할 */}

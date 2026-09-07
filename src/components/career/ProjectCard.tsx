@@ -15,7 +15,7 @@ export default function ProjectCard({ detail, isHighlighted }: ProjectCardProps)
 
   return (
     <>
-      {/* 추가 앵커 ID — resume.ts 딥링크 호환 */}
+      {/* 추가 앵커 ID (resume.ts 딥링크 호환) */}
       {detail.additionalIds?.map((id) => (
         <span key={id} id={id} aria-hidden="true" />
       ))}
@@ -99,7 +99,7 @@ export default function ProjectCard({ detail, isHighlighted }: ProjectCardProps)
                       <ul className="pl-4 space-y-1">
                         {action.details.map((detail, j) => (
                           <li key={j} className="text-sm text-[var(--muted)] leading-relaxed">
-                            — {detail}
+                            · {detail}
                           </li>
                         ))}
                       </ul>
