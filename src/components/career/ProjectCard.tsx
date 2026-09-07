@@ -15,7 +15,7 @@ export default function ProjectCard({ detail, isHighlighted }: ProjectCardProps)
 
   return (
     <>
-      {/* 추가 앵커 ID — resume.ts 딥링크 호환 */}
+      {/* 추가 앵커 ID (resume.ts 딥링크 호환) */}
       {detail.additionalIds?.map((id) => (
         <span key={id} id={id} aria-hidden="true" />
       ))}
@@ -99,7 +99,7 @@ export default function ProjectCard({ detail, isHighlighted }: ProjectCardProps)
                       <ul className="pl-4 space-y-1">
                         {action.details.map((detail, j) => (
                           <li key={j} className="text-sm text-[var(--muted)] leading-relaxed">
-                            — {detail}
+                            · {detail}
                           </li>
                         ))}
                       </ul>
@@ -108,20 +108,22 @@ export default function ProjectCard({ detail, isHighlighted }: ProjectCardProps)
                 </div>
               </div>
 
-              {/* 성과 */}
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--muted)] mb-2">
-                  📊 성과
-                </h4>
-                <ul className="space-y-1">
-                  {detail.results.map((result, i) => (
-                    <li key={i} className="text-sm leading-relaxed flex gap-2">
-                      <span className="text-[var(--accent)] flex-shrink-0">✓</span>
-                      {result}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* 성과 (결과가 없는 항목은 표시하지 않음) */}
+              {detail.results.length > 0 && (
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--muted)] mb-2">
+                    📊 성과
+                  </h4>
+                  <ul className="space-y-1">
+                    {detail.results.map((result, i) => (
+                      <li key={i} className="text-sm leading-relaxed flex gap-2">
+                        <span className="text-[var(--accent)] flex-shrink-0">✓</span>
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* 인사이트 */}
               <InsightBlock insights={detail.insights} />

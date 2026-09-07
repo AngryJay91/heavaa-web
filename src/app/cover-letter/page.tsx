@@ -28,7 +28,7 @@ export default async function CoverLetterPage({ searchParams }: CoverLetterPageP
           </p>
           <h1 className="text-4xl md:text-5xl font-black mb-4">자기소개서</h1>
           <p className="text-[var(--muted)] text-lg max-w-xl mx-auto">
-            문제를 구조화하고, 검증가능한 제품을 만드는 Product Builder
+            문제를 다시 정의하고, 검증 가능한 제품으로 끝까지 푸는 사람
           </p>
         </div>
 

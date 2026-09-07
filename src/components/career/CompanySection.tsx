@@ -31,7 +31,7 @@ export default function CompanySection({ companyId, details, highlights }: Compa
             <p className="text-[var(--accent)] font-semibold">{career.role}</p>
           </div>
           <span className="text-sm font-mono text-[var(--muted)] bg-[var(--card)] border border-[var(--border)] px-4 py-2 rounded-full self-start sm:self-auto">
-            {career.period.start} — {career.period.end}
+            {career.period.start} – {career.period.end}
           </span>
         </div>
         {career.description && (

@@ -5,11 +5,11 @@ import { getRecipientData } from '@/lib/recipient';
 
 export const metadata: Metadata = {
   title: '경력기술서',
-  description: '송윤재의 프로젝트별 경력기술서 — 문제 정의, 가설, 액션, 성과, 인사이트',
+  description: '송윤재의 프로젝트별 경력기술서. 왜 시작했는지, 무엇을 했는지, 결과와 배운 것',
 };
 
-// 회사별로 그룹핑
-const companyOrder = ['moongklab', 'heavaa', 'blq', 'cube', 'delivery-rush'];
+// 회사는 최신순 (정본 RESUME_CORE.md 경력기술서와 같은 순서)
+const companyOrder = ['heavaa', 'moongklab', 'blq'];
 
 interface CareerPageProps {
   searchParams: Promise<{ recipient?: string }>;
@@ -29,7 +29,8 @@ export default async function CareerPage({ searchParams }: CareerPageProps) {
           </p>
           <h1 className="text-4xl md:text-5xl font-black mb-4">경력기술서</h1>
           <p className="text-[var(--muted)] text-lg max-w-xl mx-auto">
-            각 프로젝트에서 정의한 문제, 세운 가설, 취한 액션, 그리고 결과
+            프로젝트 단위입니다. 회사는 최신순, 한 회사 안에서는 일이 일어난 순서로 적었습니다. 각
+            항목은 왜 시작했는지에서 출발합니다.
           </p>
         </div>
 
