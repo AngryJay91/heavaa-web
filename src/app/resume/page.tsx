@@ -3,22 +3,14 @@ import RecipientLink from '@/components/ui/RecipientLink';
 import Timeline from '@/components/resume/Timeline';
 import SkillCloud from '@/components/resume/SkillCloud';
 import Education from '@/components/resume/Education';
-import SideProjects from '@/components/resume/SideProjects';
-import { getRecipientData } from '@/lib/recipient';
+import { highlights, educationExtras } from '@/data/resume';
 
 export const metadata: Metadata = {
   title: '이력서',
-  description: '송윤재의 경력 타임라인, 스킬, 학력 정보',
+  description: '송윤재의 커리어 하이라이트, 경력, 스킬, 학력',
 };
 
-interface ResumePageProps {
-  searchParams: Promise<{ recipient?: string }>;
-}
-
-export default async function ResumePage({ searchParams }: ResumePageProps) {
-  const { recipient } = await searchParams;
-  const recipientData = getRecipientData(recipient);
-
+export default function ResumePage() {
   return (
     <div className="pt-24 pb-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -29,7 +21,7 @@ export default async function ResumePage({ searchParams }: ResumePageProps) {
           </p>
           <h1 className="text-4xl md:text-5xl font-black mb-4">이력서</h1>
           <p className="text-[var(--muted)] text-lg max-w-xl mx-auto">
-            9년간 문제를 구조화하고 검증 가능한 제품으로 연결해온 Product Manager
+            송윤재 (Yoonjae Song) · Product Builder · AI-native Engineer
           </p>
           <div className="mt-6 flex items-center justify-center gap-4">
             <RecipientLink
@@ -48,16 +40,22 @@ export default async function ResumePage({ searchParams }: ResumePageProps) {
           </div>
         </div>
 
+        {/* 커리어 하이라이트 */}
+        <section className="mb-24">
+          <h2 className="text-2xl font-bold mb-8">커리어 하이라이트</h2>
+          <ul className="list-disc pl-5 space-y-4">
+            {highlights.map((item) => (
+              <li key={item} className="text-[var(--muted)] leading-relaxed">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* 타임라인 */}
         <section className="mb-24">
           <h2 className="text-2xl font-bold mb-12">경력</h2>
           <Timeline />
-        </section>
-
-        {/* 사이드 프로젝트 */}
-        <section className="mb-24">
-          <h2 className="text-2xl font-bold mb-8">사이드 프로젝트</h2>
-          <SideProjects filter={recipientData?.sideProjectFilter} />
         </section>
 
         {/* 스킬 */}
@@ -66,10 +64,17 @@ export default async function ResumePage({ searchParams }: ResumePageProps) {
           <SkillCloud />
         </section>
 
-        {/* 학력 */}
+        {/* 학력 · 어학 */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">학력</h2>
+          <h2 className="text-2xl font-bold mb-8">학력 · 어학</h2>
           <Education />
+          <ul className="mt-6 space-y-2 text-sm text-[var(--muted)]">
+            {educationExtras.map((item) => (
+              <li key={item.label}>
+                {item.label}: {item.value}
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
     </div>
