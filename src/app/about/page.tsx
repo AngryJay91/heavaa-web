@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import RecipientLink from '@/components/ui/RecipientLink';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -54,7 +54,7 @@ export default function AboutPage() {
         {/* 이력서 / 경력기술서 / 자기소개서 링크 */}
         <div className="grid sm:grid-cols-3 gap-4">
           {docs.map((d) => (
-            <RecipientLink
+            <Link
               key={d.href}
               href={d.href}
               className="block p-6 bg-[var(--card)] border border-[var(--border)] rounded-2xl hover:border-[var(--accent)] transition-colors text-center group"
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 {d.label}
               </h3>
               <p className="text-sm text-[var(--muted)]">{d.desc}</p>
-            </RecipientLink>
+            </Link>
           ))}
         </div>
 

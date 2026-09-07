@@ -1,15 +1,10 @@
 'use client';
 
 import { useRef } from 'react';
-import RecipientLink from '@/components/ui/RecipientLink';
+import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-interface HeroSectionProps {
-  tagline?: string;
-  subtitle?: string;
-}
-
-export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}) {
+export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -65,17 +60,8 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          {tagline && subtitle ? (
-            <>
-              {subtitle}{' '}
-              <span className="text-[var(--accent)] font-semibold">{tagline}</span>
-            </>
-          ) : (
-            <>
-              문제를 발견하고, 가설을 세우고,{' '}
-              <span className="text-[var(--accent)] font-semibold">제품으로 검증합니다.</span>
-            </>
-          )}
+          문제를 발견하고, 가설을 세우고,{' '}
+          <span className="text-[var(--accent)] font-semibold">제품으로 검증합니다.</span>
         </motion.p>
 
         {/* CTA 버튼 */}
@@ -91,18 +77,18 @@ export default function HeroSection({ tagline, subtitle }: HeroSectionProps = {}
           >
             프로덕트 보기 ↓
           </a>
-          <RecipientLink
+          <Link
             href="/about"
             className="px-6 py-3 border border-[var(--border)] rounded-xl font-semibold hover:bg-[var(--card)] transition-colors"
           >
             About →
-          </RecipientLink>
-          <RecipientLink
+          </Link>
+          <Link
             href="/contact"
             className="px-6 py-3 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
           >
             연락하기 →
-          </RecipientLink>
+          </Link>
         </motion.div>
       </motion.div>
 
